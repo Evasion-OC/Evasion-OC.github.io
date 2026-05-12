@@ -31,8 +31,8 @@
         <div class="avatar"><img src="assets/img/avatar.png" alt="Kasra Ghanavati" onerror="this.style.display='none'" /></div>
         <h1 class="name">Kasra&nbsp;Ghanavati</h1>
         <p class="name-alt">کسری قنواتی</p>
+        <p class="affiliation">University of Greenwich</p>
         <p class="location"><i class="fas fa-map-marker-alt fa-fw"></i> San Francisco, CA</p>
-        <p class="quote">&ldquo;Curiosity is the spark.&rdquo;</p>
         <nav class="nav">
           <a href="index.html" class="nav-link">About</a>
           <a href="experience.html" class="nav-link">Experience</a>
@@ -48,37 +48,26 @@
           <a class="contact-item" href="https://twitter.com/yourname" title="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
           <a class="contact-item" href="cv.html" title="CV" aria-current="page"><i class="ai ai-cv"></i></a>
         </div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
     </aside>
 
     <main class="main" id="main-content">
-      <section class="hero">
-        <p class="eyebrow">CV</p>
-        <h1 class="hero-name">Curriculum Vitae</h1>
-        <p class="hero-tagline">
-          Education, experience, publications, and service &mdash; in PDF form.
-        </p>
-        <div class="hero-cta">
-          <a href="assets/cv.pdf" class="btn-primary" download>
-            <i class="fas fa-download"></i> Download PDF
-          </a>
-          <a href="assets/cv.pdf" class="btn-ghost" target="_blank" rel="noopener">
-            <i class="fas fa-external-link-alt"></i> Open in new tab
-          </a>
-        </div>
-      </section>
-
       <section class="prose">
+        <h2>Curriculum Vitae</h2>
+        <p>
+          <a href="assets/cv.pdf" download><i class="fas fa-download"></i> Download PDF</a>
+          &nbsp;&middot;&nbsp;
+          <a href="assets/cv.pdf" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Open in new tab</a>
+        </p>
+
         <object data="assets/cv.pdf" type="application/pdf" class="cv-frame">
           <div class="cv-fallback">
+            <i class="fas fa-file-pdf"></i>
             <p>
-              <i class="fas fa-file-pdf"></i>
-              Your browser can't display the inline PDF, or no <code>cv.pdf</code> is uploaded yet.
+              Your browser cannot display the inline PDF, or no <code>cv.pdf</code> is uploaded yet.
             </p>
             <p>
               Drop your CV at <code>assets/cv.pdf</code> and it will render here automatically.
-              In the meantime, you can <a href="assets/cv.pdf">try downloading it directly</a>.
             </p>
           </div>
         </object>

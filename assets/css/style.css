@@ -1,5 +1,5 @@
 /* ============================================================
-   Theme tokens — Oxford blue (day) + pbb.sh-inspired dark
+   Theme tokens — Oxford blue + warm cream (single theme)
    ============================================================ */
 :root {
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
@@ -11,7 +11,6 @@
   --font-persian: "Vazirmatn", "Geeza Pro", "Iranian Sans", Tahoma,
     var(--font-sans);
 
-  /* Oxford blue + warm cream */
   --color-primary: #0f2a47;
   --color-primary-hover: #1e4470;
   --color-primary-soft: #e2e8f0;
@@ -28,7 +27,6 @@
   --color-border: #dcd3c2;
   --color-border-soft: #e8e0d0;
 
-  /* Tag palette (semantic) */
   --tag-magenta: #9b2f60;     --tag-magenta-bg: #fcf1f5;
   --tag-red: #b83232;         --tag-red-bg: #fcf3f1;
   --tag-volcano: #c5532a;     --tag-volcano-bg: #fdf2eb;
@@ -54,45 +52,6 @@
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== Dark mode (cream-on-deep-blue editorial) =====
-   Inverts the day relationship: day = blue ink on cream paper,
-   night = cream text on deep-blue paper, with a warm gold accent. */
-:root[data-theme="dark"] {
-  --color-primary: #d4af6a;
-  --color-primary-hover: #e0c082;
-  --color-primary-soft: #2a2418;
-  --color-accent: #d4af6a;
-
-  --color-text: #f0e9dd;
-  --color-heading: #f8f3eb;
-  --color-muted: #a8a092;
-  --color-link: var(--color-primary);
-
-  --color-bg: #0a1828;
-  --color-bg-soft: #11253a;
-  --color-sidebar-bg: #0e1f33;
-  --color-border: #1f3349;
-  --color-border-soft: #182a3c;
-
-  /* Warm-tinted dark tags */
-  --tag-magenta: #e89bc0;     --tag-magenta-bg: rgba(235, 47, 150, 0.12);
-  --tag-red: #e09898;         --tag-red-bg: rgba(245, 34, 45, 0.12);
-  --tag-volcano: #e0a888;     --tag-volcano-bg: rgba(250, 84, 28, 0.12);
-  --tag-orange: #e0b078;      --tag-orange-bg: rgba(250, 140, 22, 0.12);
-  --tag-gold: #d4af6a;        --tag-gold-bg: rgba(250, 173, 20, 0.12);
-  --tag-lime: #c0d488;        --tag-lime-bg: rgba(160, 217, 17, 0.12);
-  --tag-green: #88c898;       --tag-green-bg: rgba(82, 196, 26, 0.12);
-  --tag-cyan: #88c8c8;        --tag-cyan-bg: rgba(19, 194, 194, 0.12);
-  --tag-blue: #9cbce0;        --tag-blue-bg: rgba(24, 144, 255, 0.12);
-  --tag-geekblue: #a8b0e0;    --tag-geekblue-bg: rgba(47, 84, 235, 0.12);
-  --tag-purple: #c0a8d8;      --tag-purple-bg: rgba(114, 46, 209, 0.12);
-
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.45),
-                 0 1px 1px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.6),
-                       0 4px 8px rgba(0, 0, 0, 0.4);
-}
-
 /* ============================================================
    Reset + base
    ============================================================ */
@@ -109,7 +68,6 @@ html, body {
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1, "cv11" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background var(--transition), color var(--transition);
 }
 
 ::selection { background: var(--color-primary); color: var(--color-bg); }
@@ -150,6 +108,41 @@ hr {
 }
 
 /* ============================================================
+   Skip link (accessibility)
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 0.8rem 1.25rem;
+  background: var(--color-primary);
+  color: var(--color-bg) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  border-radius: 0 0 var(--radius-base) 0;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  background-image: none !important;
+  padding-bottom: 0.8rem !important;
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================
+   Inline code
+   ============================================================ */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0.1em 0.45em;
+  background: var(--color-bg-soft);
+  border-radius: 3px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-soft);
+}
+
+/* ============================================================
    Layout
    ============================================================ */
 .layout-grid {
@@ -185,7 +178,7 @@ hr {
 
 .main {
   padding: 4rem 4rem 5rem;
-  max-width: 980px;
+  max-width: 880px;
   width: 100%;
 }
 
@@ -207,14 +200,12 @@ hr {
   border: 4px solid var(--color-bg);
   box-shadow: 0 6px 20px color-mix(in srgb, var(--color-heading) 18%, transparent),
               0 0 0 1px var(--color-border);
-  transition: transform var(--transition-slow);
 }
-.avatar:hover { transform: scale(1.03); }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
 .name {
   font-family: var(--font-serif);
-  font-size: 1.85rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: var(--color-heading);
   letter-spacing: -0.02em;
@@ -224,44 +215,41 @@ hr {
 
 .name-alt {
   font-family: var(--font-persian);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   color: var(--color-primary);
   opacity: 0.85;
   font-weight: 500;
   line-height: 1.2;
   direction: rtl;
   unicode-bidi: isolate;
-  margin-bottom: 0.25rem;
+}
+
+.affiliation {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-text);
+  letter-spacing: 0.005em;
+  line-height: 1.35;
+  margin-top: 0.15rem;
 }
 
 .location {
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   color: var(--color-muted);
   display: flex;
   align-items: center;
   gap: 0.4rem;
   letter-spacing: 0.01em;
+  margin-top: 0.1rem;
 }
 .location i { color: var(--color-primary); opacity: 0.7; }
-
-.quote {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--color-muted);
-  font-size: 1rem;
-  margin: 1rem 0 0.5rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  width: 100%;
-  letter-spacing: 0.005em;
-}
 
 .nav {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 0.75rem;
+  margin-top: 1.5rem;
   gap: 0.15rem;
 }
 .nav-link {
@@ -279,13 +267,11 @@ hr {
   background: var(--color-bg);
   color: var(--color-primary);
 }
-.nav-link.active,
 .nav-link[aria-current="page"] {
   background: var(--color-primary);
   color: var(--color-bg);
   box-shadow: 0 2px 8px color-mix(in srgb, var(--color-primary) 35%, transparent);
 }
-.nav-link.active:hover,
 .nav-link[aria-current="page"]:hover {
   color: var(--color-bg);
   background: var(--color-primary);
@@ -299,8 +285,8 @@ hr {
   margin-top: 1.25rem;
 }
 .contact-item {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,7 +294,7 @@ hr {
   background: var(--color-bg);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: all var(--transition);
   background-image: none !important;
   padding: 0 !important;
@@ -321,27 +307,6 @@ hr {
   box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
-.theme-toggle {
-  margin-top: 1rem;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
-  color: var(--color-text);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  transition: all var(--transition);
-}
-.theme-toggle:hover {
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-  transform: rotate(15deg);
-}
-
 /* ============================================================
    Prose
    ============================================================ */
@@ -350,11 +315,12 @@ hr {
   font-size: 1.0625rem;
 }
 .prose h2 {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   margin: 2.5rem 0 1rem;
   padding-bottom: 0.25rem;
   position: relative;
 }
+.prose h2:first-child { margin-top: 0; }
 .prose h2::after {
   content: "";
   position: absolute;
@@ -366,7 +332,7 @@ hr {
   border-radius: 1px;
 }
 .prose h3 {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   margin: 1.75rem 0 0.5rem;
 }
 .prose > p, .prose > ul, .prose > ol { margin-bottom: 1.15rem; }
@@ -375,7 +341,7 @@ hr {
 
 .news-list { list-style: none; margin-left: 0 !important; }
 .news-list li {
-  padding: 0.65rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px dashed var(--color-border);
   display: flex;
   gap: 1rem;
@@ -386,7 +352,7 @@ hr {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   color: var(--color-primary);
-  min-width: 6rem;
+  min-width: 5.5rem;
   flex-shrink: 0;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -476,7 +442,7 @@ button.filter-tag:hover { transform: translateY(-1px); }
 
 .pub-card {
   display: grid;
-  grid-template-columns: 170px 1fr;
+  grid-template-columns: 160px 1fr;
   gap: 1.5rem;
   padding: 1.5rem;
   background: var(--color-bg);
@@ -520,7 +486,7 @@ button.filter-tag:hover { transform: translateY(-1px); }
 .card-image img { width: 100%; height: 100%; object-fit: cover; }
 .placeholder-img {
   color: var(--color-muted);
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   background: linear-gradient(135deg, var(--color-bg-soft), var(--color-border-soft));
 }
 
@@ -528,7 +494,7 @@ button.filter-tag:hover { transform: translateY(-1px); }
 
 .card-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-heading);
   line-height: 1.3;
@@ -582,7 +548,7 @@ button.filter-tag:hover { transform: translateY(-1px); }
 .card-tags .filter-tag { cursor: default; }
 
 .excerpt {
-  font-size: 0.9375rem;
+  font-size: 0.925rem;
   color: var(--color-text);
   margin-top: 0.25rem;
   line-height: 1.65;
@@ -617,6 +583,122 @@ button.filter-tag:hover { transform: translateY(-1px); }
   box-shadow: 0 4px 10px color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 .btn-ghost i { font-size: 0.95rem; }
+
+/* ============================================================
+   Year header (research page)
+   ============================================================ */
+.year-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 2rem 0 0.85rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  letter-spacing: -0.015em;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.year-header:first-child { margin-top: 0.5rem; }
+.year-header .count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   BibTeX expand / copy
+   ============================================================ */
+.bibtex-toggle { margin-top: 0.5rem; }
+.bibtex-toggle summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  list-style: none;
+  transition: all var(--transition);
+  letter-spacing: 0.01em;
+}
+.bibtex-toggle summary::-webkit-details-marker { display: none; }
+.bibtex-toggle summary::marker { content: ""; }
+.bibtex-toggle summary:hover {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.bibtex-toggle[open] summary {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+.bibtex-body {
+  position: relative;
+  margin-top: 0.6rem;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  overflow: hidden;
+}
+.bibtex-code {
+  padding: 1rem;
+  padding-right: 5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  overflow-x: auto;
+  color: var(--color-text);
+  margin: 0;
+  white-space: pre;
+  background: transparent;
+  border: none;
+}
+.bibtex-copy {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.bibtex-copy:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+.bibtex-copy.is-copied {
+  background: var(--tag-green);
+  color: var(--color-bg);
+  border-color: var(--tag-green);
+}
+
+/* ============================================================
+   More link
+   ============================================================ */
+.more-link {
+  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  letter-spacing: 0.005em;
+}
 
 /* ============================================================
    Contact form
@@ -720,347 +802,6 @@ button.filter-tag:hover { transform: translateY(-1px); }
 .form-help i { color: var(--color-primary); opacity: 0.7; }
 
 /* ============================================================
-   Skip-to-content (accessibility)
-   ============================================================ */
-.skip-link {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  padding: 0.8rem 1.25rem;
-  background: var(--color-primary);
-  color: var(--color-bg) !important;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.875rem;
-  letter-spacing: 0.02em;
-  border-radius: 0 0 var(--radius-base) 0;
-  z-index: 9999;
-  transition: top 0.2s ease;
-  background-image: none !important;
-  padding-bottom: 0.8rem !important;
-}
-.skip-link:focus { top: 0; }
-
-/* ============================================================
-   Inline code
-   ============================================================ */
-code {
-  font-family: var(--font-mono);
-  font-size: 0.85em;
-  padding: 0.1em 0.45em;
-  background: var(--color-bg-soft);
-  border-radius: 3px;
-  color: var(--color-primary);
-  border: 1px solid var(--color-border-soft);
-}
-
-/* ============================================================
-   Hero block (top of about / overclocking / 404 / cv)
-   ============================================================ */
-.hero {
-  padding: 0.5rem 0 2.25rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
-}
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--color-primary);
-  margin-bottom: 0.65rem;
-  opacity: 0.85;
-}
-.hero-name {
-  font-family: var(--font-serif);
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  color: var(--color-heading);
-  margin-bottom: 0.5rem;
-}
-.hero-role {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-style: italic;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-  letter-spacing: 0.005em;
-}
-.hero-tagline {
-  font-size: 1.0625rem;
-  color: var(--color-text);
-  max-width: 620px;
-  margin-bottom: 1.5rem;
-  line-height: 1.65;
-}
-.hero-cta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 0.25rem;
-}
-.error-code {
-  font-family: var(--font-serif) !important;
-  font-size: 5.5rem !important;
-  text-transform: none !important;
-  letter-spacing: -0.05em !important;
-  color: var(--color-primary);
-  opacity: 0.25 !important;
-  line-height: 0.9 !important;
-  margin-bottom: 0.25rem !important;
-  font-weight: 700;
-}
-
-/* ============================================================
-   Featured publication card
-   ============================================================ */
-.pub-card-featured {
-  background: linear-gradient(135deg, var(--color-bg-soft), var(--color-bg));
-  border: 1px solid var(--color-primary);
-  position: relative;
-}
-.pub-card-featured::before {
-  background: var(--color-primary) !important;
-  width: 4px !important;
-}
-.featured-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  padding: 0.25rem 0.65rem;
-  background: var(--color-primary);
-  color: var(--color-bg);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-mono);
-  z-index: 1;
-}
-
-/* ============================================================
-   Stats grid (overclocking page, home teaser)
-   ============================================================ */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0.85rem;
-  margin: 1.25rem 0 2rem;
-}
-.stat-card {
-  background: var(--color-bg-soft);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
-  padding: 1.1rem 1rem;
-  text-align: center;
-  transition: all var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-.stat-card::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: var(--color-primary);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-.stat-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-card-hover);
-}
-.stat-card:hover::before { opacity: 1; }
-.stat-value {
-  font-family: var(--font-serif);
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  line-height: 1.1;
-  margin-bottom: 0.3rem;
-  letter-spacing: -0.02em;
-}
-.stat-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-heading);
-  margin-bottom: 0.15rem;
-  letter-spacing: 0.01em;
-}
-.stat-context {
-  font-size: 0.72rem;
-  color: var(--color-muted);
-  font-family: var(--font-mono);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-/* ============================================================
-   Year header (research page)
-   ============================================================ */
-.year-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin: 2rem 0 0.85rem;
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  font-weight: 600;
-  color: var(--color-heading);
-  letter-spacing: -0.015em;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid var(--color-border);
-}
-.year-header:first-child { margin-top: 0.5rem; }
-.year-header .count {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: var(--color-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* ============================================================
-   BibTeX expand / copy
-   ============================================================ */
-.bibtex-toggle { margin-top: 0.5rem; }
-.bibtex-toggle summary {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.32rem 0.85rem;
-  border-radius: var(--radius-pill);
-  font-size: 0.8125rem;
-  color: var(--color-text);
-  background: var(--color-bg-soft);
-  border: 1px solid var(--color-border);
-  list-style: none;
-  transition: all var(--transition);
-  letter-spacing: 0.01em;
-}
-.bibtex-toggle summary::-webkit-details-marker { display: none; }
-.bibtex-toggle summary::marker { content: ""; }
-.bibtex-toggle summary:hover {
-  background: var(--color-primary-soft);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-.bibtex-toggle[open] summary {
-  background: var(--color-primary);
-  color: var(--color-bg);
-  border-color: var(--color-primary);
-}
-.bibtex-body {
-  position: relative;
-  margin-top: 0.6rem;
-  background: var(--color-bg-soft);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  overflow: hidden;
-}
-.bibtex-code {
-  padding: 1rem;
-  padding-right: 5rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  line-height: 1.65;
-  overflow-x: auto;
-  color: var(--color-text);
-  margin: 0;
-  white-space: pre;
-  background: transparent;
-  border: none;
-}
-.bibtex-copy {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
-  padding: 0.3rem 0.7rem;
-  font-size: 0.75rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-bg);
-  color: var(--color-text);
-  border-radius: var(--radius-base);
-  cursor: pointer;
-  font-family: inherit;
-  transition: all var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-.bibtex-copy:hover {
-  background: var(--color-primary);
-  color: var(--color-bg);
-  border-color: var(--color-primary);
-}
-.bibtex-copy.is-copied {
-  background: var(--tag-green);
-  color: var(--color-bg);
-  border-color: var(--tag-green);
-}
-
-/* ============================================================
-   Fade-in on scroll (respects prefers-reduced-motion)
-   ============================================================ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
-}
-.fade-in.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .fade-in { opacity: 1; transform: none; transition: none; }
-}
-
-/* ============================================================
-   "More" link
-   ============================================================ */
-.more-link {
-  font-weight: 500;
-  color: var(--color-primary);
-  font-size: 0.95rem;
-  letter-spacing: 0.005em;
-}
-
-/* ============================================================
-   Photo grid (photos.html)
-   ============================================================ */
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-.photo-cell {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  transition: all var(--transition);
-}
-.photo-cell:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-card-hover);
-  border-color: var(--color-primary);
-}
-.photo-cell .card-image { aspect-ratio: 1; border-radius: 0; }
-.photo-cell figcaption {
-  padding: 0.65rem 0.9rem;
-  font-size: 0.8125rem;
-  color: var(--color-muted);
-  letter-spacing: 0.01em;
-}
-
-/* ============================================================
    CV embed
    ============================================================ */
 .cv-frame {
@@ -1089,6 +830,27 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ============================================================
+   404 page
+   ============================================================ */
+.not-found {
+  text-align: center;
+  padding-top: 5rem;
+}
+.not-found .error-num {
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+  opacity: 0.2;
+  letter-spacing: -0.05em;
+  margin-bottom: 1rem;
+}
+.not-found h2 { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.not-found h2::after { display: none; }
+.not-found p { color: var(--color-muted); margin-bottom: 1.5rem; }
 
 /* ============================================================
    Footer
