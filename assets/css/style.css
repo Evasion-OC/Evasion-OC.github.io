@@ -113,48 +113,47 @@
   --color-border-soft: #ddd6c8;
 }
 
-/* ===== Dark mode ===== */
+/* ===== Dark mode (unified, pbb.sh-inspired) =====
+   Cool dark with purple-blue primary, regardless of which day palette is set.
+   The palette picker only affects light mode. */
 :root[data-theme="dark"],
-:root[data-theme="dark"][data-palette="burgundy"] {
-  --color-primary: #c56a85;
-  --color-primary-hover: #d88aa0;
-  --color-primary-soft: #3a1e2a;
-  --color-accent: #d6b080;
-
-  --color-text: #d6cdca;
-  --color-heading: #f0e5e2;
-  --color-muted: #968685;
-  --color-link: var(--color-primary);
-
-  --color-bg: #181410;
-  --color-bg-soft: #221c18;
-  --color-sidebar-bg: #1f1814;
-  --color-border: #3a302a;
-  --color-border-soft: #2d2622;
-}
-
-:root[data-theme="dark"][data-palette="oxford"] {
-  --color-primary: #7aaedd;
-  --color-primary-hover: #99c2e8;
-  --color-primary-soft: #1e3349;
-  --color-accent: #d6b080;
-  --color-link: var(--color-primary);
-}
-
-:root[data-theme="dark"][data-palette="forest"] {
-  --color-primary: #7dab94;
-  --color-primary-hover: #9bc4af;
-  --color-primary-soft: #1f3329;
-  --color-accent: #d6b080;
-  --color-link: var(--color-primary);
-}
-
+:root[data-theme="dark"][data-palette="burgundy"],
+:root[data-theme="dark"][data-palette="oxford"],
+:root[data-theme="dark"][data-palette="forest"],
 :root[data-theme="dark"][data-palette="charcoal"] {
-  --color-primary: #d6cdc0;
-  --color-primary-hover: #ebe2d5;
-  --color-primary-soft: #2d2823;
-  --color-accent: #e5c57e;
-  --color-link: var(--color-accent);
+  --color-primary: #8b7aff;
+  --color-primary-hover: #a99bff;
+  --color-primary-soft: #2a2348;
+  --color-accent: #b898e0;
+
+  --color-text: #e9e8f0;
+  --color-heading: #cdc8d8;
+  --color-muted: #a8a4b8;
+  --color-link: var(--color-primary);
+
+  --color-bg: #110f1a;
+  --color-bg-soft: #1a1824;
+  --color-sidebar-bg: #161422;
+  --color-border: #2d2933;
+  --color-border-soft: #3f3c48;
+
+  /* Dark tag palette: lighter desaturated foregrounds, low-alpha backgrounds */
+  --tag-magenta: #f0a0cc;     --tag-magenta-bg: rgba(235, 47, 150, 0.15);
+  --tag-red: #f0a0a0;         --tag-red-bg: rgba(245, 34, 45, 0.15);
+  --tag-volcano: #f0a888;     --tag-volcano-bg: rgba(250, 84, 28, 0.15);
+  --tag-orange: #f0b878;      --tag-orange-bg: rgba(250, 140, 22, 0.15);
+  --tag-gold: #f0c868;        --tag-gold-bg: rgba(250, 173, 20, 0.15);
+  --tag-lime: #c0e070;        --tag-lime-bg: rgba(160, 217, 17, 0.15);
+  --tag-green: #88d088;       --tag-green-bg: rgba(82, 196, 26, 0.15);
+  --tag-cyan: #70d0d0;        --tag-cyan-bg: rgba(19, 194, 194, 0.15);
+  --tag-blue: #80c0f0;        --tag-blue-bg: rgba(24, 144, 255, 0.15);
+  --tag-geekblue: #a0a8f0;    --tag-geekblue-bg: rgba(47, 84, 235, 0.15);
+  --tag-purple: #b898e0;      --tag-purple-bg: rgba(114, 46, 209, 0.15);
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4),
+                 0 1px 1px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.55),
+                       0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================================
@@ -560,11 +559,6 @@ button.filter-tag:hover { transform: translateY(-1px); }
 .tag-blue     { color: var(--tag-blue);     background: var(--tag-blue-bg);     border-color: var(--tag-blue); }
 .tag-geekblue { color: var(--tag-geekblue); background: var(--tag-geekblue-bg); border-color: var(--tag-geekblue); }
 .tag-purple   { color: var(--tag-purple);   background: var(--tag-purple-bg);   border-color: var(--tag-purple); }
-
-[data-theme="dark"] .filter-tag {
-  background: transparent;
-  filter: brightness(1.1) saturate(1.1);
-}
 
 /* ============================================================
    Publication cards
