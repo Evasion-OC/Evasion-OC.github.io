@@ -1,9 +1,5 @@
 # Personal Academic Website
 
-A lightweight personal academic site inspired by [pbb.sh](https://pbb.sh/).
-Pure HTML + CSS + JS — no build step, no framework. Drop it onto GitHub Pages
-and you're done.
-
 ## Structure
 
 ```
