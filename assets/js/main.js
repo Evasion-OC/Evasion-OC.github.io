@@ -150,6 +150,66 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ============================================================
+// Fade-in on scroll (IntersectionObserver)
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".fade-in");
+  if (!elements.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+});
+
+// ============================================================
+// BibTeX copy buttons
+// ============================================================
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".bibtex-copy").forEach((btn) => {
+    btn.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const wrapper = btn.closest(".bibtex-body");
+      const code = wrapper && wrapper.querySelector(".bibtex-code");
+      if (!code) return;
+      const text = code.textContent.trim();
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const range = document.createRange();
+        range.selectNode(code);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try { document.execCommand("copy"); } catch {}
+        sel.removeAllRanges();
+      }
+      const original = btn.innerHTML;
+      btn.classList.add("is-copied");
+      btn.innerHTML = '<i class="fas fa-check"></i> Copied';
+      setTimeout(() => {
+        btn.classList.remove("is-copied");
+        btn.innerHTML = original;
+      }, 1800);
+    });
+  });
+});
+
+// ============================================================
 // Last updated stamp
 // ============================================================
 document.addEventListener("DOMContentLoaded", () => {

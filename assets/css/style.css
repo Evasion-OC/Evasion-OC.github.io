@@ -821,6 +821,377 @@ button.filter-tag:hover { transform: translateY(-1px); }
 .form-help i { color: var(--color-primary); opacity: 0.7; }
 
 /* ============================================================
+   Skip-to-content (accessibility)
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 0.8rem 1.25rem;
+  background: var(--color-primary);
+  color: var(--color-bg) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  border-radius: 0 0 var(--radius-base) 0;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  background-image: none !important;
+  padding-bottom: 0.8rem !important;
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================
+   Inline code
+   ============================================================ */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0.1em 0.45em;
+  background: var(--color-bg-soft);
+  border-radius: 3px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border-soft);
+}
+
+/* ============================================================
+   Hero block (top of about / overclocking / 404 / cv)
+   ============================================================ */
+.hero {
+  padding: 0.5rem 0 2.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-primary);
+  margin-bottom: 0.65rem;
+  opacity: 0.85;
+}
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+.hero-role {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  letter-spacing: 0.005em;
+}
+.hero-tagline {
+  font-size: 1.0625rem;
+  color: var(--color-text);
+  max-width: 620px;
+  margin-bottom: 1.5rem;
+  line-height: 1.65;
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.25rem;
+}
+.error-code {
+  font-family: var(--font-serif) !important;
+  font-size: 5.5rem !important;
+  text-transform: none !important;
+  letter-spacing: -0.05em !important;
+  color: var(--color-primary);
+  opacity: 0.25 !important;
+  line-height: 0.9 !important;
+  margin-bottom: 0.25rem !important;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Featured publication card
+   ============================================================ */
+.pub-card-featured {
+  background: linear-gradient(135deg, var(--color-bg-soft), var(--color-bg));
+  border: 1px solid var(--color-primary);
+  position: relative;
+}
+.pub-card-featured::before {
+  background: var(--color-primary) !important;
+  width: 4px !important;
+}
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.65rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  z-index: 1;
+}
+
+/* ============================================================
+   Stats grid (overclocking page, home teaser)
+   ============================================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.85rem;
+  margin: 1.25rem 0 2rem;
+}
+.stat-card {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.1rem 1rem;
+  text-align: center;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--color-primary);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-card-hover);
+}
+.stat-card:hover::before { opacity: 1; }
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-heading);
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.01em;
+}
+.stat-context {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Year header (research page)
+   ============================================================ */
+.year-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 2rem 0 0.85rem;
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  letter-spacing: -0.015em;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.year-header:first-child { margin-top: 0.5rem; }
+.year-header .count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   BibTeX expand / copy
+   ============================================================ */
+.bibtex-toggle { margin-top: 0.5rem; }
+.bibtex-toggle summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  list-style: none;
+  transition: all var(--transition);
+  letter-spacing: 0.01em;
+}
+.bibtex-toggle summary::-webkit-details-marker { display: none; }
+.bibtex-toggle summary::marker { content: ""; }
+.bibtex-toggle summary:hover {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.bibtex-toggle[open] summary {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+.bibtex-body {
+  position: relative;
+  margin-top: 0.6rem;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  overflow: hidden;
+}
+.bibtex-code {
+  padding: 1rem;
+  padding-right: 5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  overflow-x: auto;
+  color: var(--color-text);
+  margin: 0;
+  white-space: pre;
+  background: transparent;
+  border: none;
+}
+.bibtex-copy {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.bibtex-copy:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+}
+.bibtex-copy.is-copied {
+  background: var(--tag-green);
+  color: var(--color-bg);
+  border-color: var(--tag-green);
+}
+
+/* ============================================================
+   Fade-in on scroll (respects prefers-reduced-motion)
+   ============================================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   "More" link
+   ============================================================ */
+.more-link {
+  font-weight: 500;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  letter-spacing: 0.005em;
+}
+
+/* ============================================================
+   Photo grid (photos.html)
+   ============================================================ */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.photo-cell {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+.photo-cell:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-primary);
+}
+.photo-cell .card-image { aspect-ratio: 1; border-radius: 0; }
+.photo-cell figcaption {
+  padding: 0.65rem 0.9rem;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   CV embed
+   ============================================================ */
+.cv-frame {
+  width: 100%;
+  height: 850px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg-soft);
+  margin-top: 0.5rem;
+}
+.cv-fallback {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+.cv-fallback > i {
+  font-size: 2.75rem;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+  display: block;
+  opacity: 0.6;
+}
+.cv-fallback p {
+  margin-bottom: 0.9rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 .footer {

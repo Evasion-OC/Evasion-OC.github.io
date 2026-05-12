@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evasion-oc.github.io/sitemap.xml

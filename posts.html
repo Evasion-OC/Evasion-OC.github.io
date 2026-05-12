@@ -4,7 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Posts | Kasra Ghanavati</title>
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <meta name="description" content="Blog posts and notes by Kasra Ghanavati on research, engineering, and hardware." />
+  <meta name="author" content="Kasra Ghanavati" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Posts | Kasra Ghanavati" />
+  <meta property="og:description" content="Blog posts and notes on research, engineering, and hardware." />
+  <meta property="og:url" content="https://evasion-oc.github.io/posts.html" />
+  <meta property="og:image" content="https://evasion-oc.github.io/assets/img/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Posts | Kasra Ghanavati" />
+  <meta name="twitter:description" content="Blog posts and notes on research, engineering, and hardware." />
+  <meta name="twitter:image" content="https://evasion-oc.github.io/assets/img/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +27,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="layout-grid">
     <aside class="sidebar">
       <div class="sidebar-inner">
@@ -26,14 +40,17 @@
           <a href="index.html" class="nav-link">About</a>
           <a href="experience.html" class="nav-link">Experience</a>
           <a href="research.html" class="nav-link">Research</a>
-          <a href="posts.html" class="nav-link active">Posts</a>
+          <a href="overclocking.html" class="nav-link">Overclocking</a>
+          <a href="posts.html" class="nav-link" aria-current="page">Posts</a>
         </nav>
         <div class="contact-block">
           <a class="contact-item" href="contact.html" title="Contact"><i class="fas fa-envelope"></i></a>
-          <a class="contact-item" href="https://github.com/yourname" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-          <a class="contact-item" href="https://scholar.google.com/" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i></a>
-          <a class="contact-item" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-          <a class="contact-item" href="https://twitter.com/yourname" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+          <a class="contact-item" href="https://github.com/Evasion-OC" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a class="contact-item" href="https://hwbot.org/users/evasion/" title="HWBOT" target="_blank" rel="noopener"><i class="fas fa-bolt"></i></a>
+          <a class="contact-item" href="https://scholar.google.com/" title="Google Scholar" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i></a>
+          <a class="contact-item" href="https://www.linkedin.com/in/yourname" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+          <a class="contact-item" href="https://twitter.com/yourname" title="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+          <a class="contact-item" href="cv.html" title="CV"><i class="ai ai-cv"></i></a>
         </div>
         <div class="palette-picker" role="group" aria-label="Color palette">
           <button class="palette-swatch" data-palette="burgundy" aria-label="Burgundy"></button>
@@ -41,11 +58,19 @@
           <button class="palette-swatch" data-palette="forest" aria-label="Forest green"></button>
           <button class="palette-swatch" data-palette="charcoal" aria-label="Charcoal"></button>
         </div>
-        <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
     </aside>
 
-    <main class="main">
+    <main class="main" id="main-content">
+      <section class="hero">
+        <p class="eyebrow">Writing</p>
+        <h1 class="hero-name">Posts &amp; notes</h1>
+        <p class="hero-tagline">
+          Short pieces on research, engineering, and the occasional overclocking session.
+        </p>
+      </section>
+
       <section class="card-grid">
 
         <article class="pub-card">
@@ -77,10 +102,22 @@
             <div class="card-image placeholder-img"><i class="fas fa-image"></i></div>
           </div>
           <div class="content-col">
-            <h3 class="card-title"><a href="#">Setting up a fast Astro-like static site on GitHub Pages</a></h3>
+            <h3 class="card-title"><a href="#">Tuning Samsung B-die to 4400 CL15</a></h3>
+            <p class="info-line"><span class="pub-date">Feb 18, 2026</span><span class="divider">&middot;</span><span class="pub-venue">12 min read</span></p>
+            <div class="card-tags"><span class="filter-tag tag-orange">Hardware</span></div>
+            <p class="excerpt">A practical guide: identifying B-die kits, sweeping voltage / tRFC / tRRDs, and how I validated stability.</p>
+          </div>
+        </article>
+
+        <article class="pub-card">
+          <div class="card-image-col">
+            <div class="card-image placeholder-img"><i class="fas fa-image"></i></div>
+          </div>
+          <div class="content-col">
+            <h3 class="card-title"><a href="#">Setting up a fast static site on GitHub Pages</a></h3>
             <p class="info-line"><span class="pub-date">Jan 18, 2026</span><span class="divider">&middot;</span><span class="pub-venue">6 min read</span></p>
             <div class="card-tags"><span class="filter-tag tag-green">Algorithm</span></div>
-            <p class="excerpt">How I deployed this site to GitHub Pages, with notes on what I would do differently.</p>
+            <p class="excerpt">How I deployed this site to GitHub Pages, with notes on what I'd do differently next time.</p>
           </div>
         </article>
 

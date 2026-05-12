@@ -3,9 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Kasra Ghanavati</title>
-  <meta name="description" content="Personal academic website of Kasra Ghanavati." />
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <title>Kasra Ghanavati — Research, Engineering, Overclocking</title>
+  <meta name="description" content="Personal site of Kasra Ghanavati: research, engineering, and competitive extreme overclocking on HWBOT." />
+  <meta name="author" content="Kasra Ghanavati" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kasra Ghanavati — Research, Engineering, Overclocking" />
+  <meta property="og:description" content="Researcher, engineer, and competitive extreme overclocker (HWBOT: Evasion, team Wegg)." />
+  <meta property="og:url" content="https://evasion-oc.github.io/" />
+  <meta property="og:image" content="https://evasion-oc.github.io/assets/img/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kasra Ghanavati — Research, Engineering, Overclocking" />
+  <meta name="twitter:description" content="Researcher, engineer, and competitive extreme overclocker." />
+  <meta name="twitter:image" content="https://evasion-oc.github.io/assets/img/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,97 +27,171 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <div class="layout-grid">
-    <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-inner">
-        <div class="avatar">
-          <img src="assets/img/avatar.png" alt="Kasra Ghanavati" onerror="this.style.display='none'" />
-        </div>
+        <div class="avatar"><img src="assets/img/avatar.png" alt="Kasra Ghanavati" onerror="this.style.display='none'" /></div>
         <h1 class="name">Kasra&nbsp;Ghanavati</h1>
         <p class="name-alt">کسری قنواتی</p>
-
-        <p class="location">
-          <i class="fas fa-map-marker-alt fa-fw"></i>
-          San Francisco, CA
-        </p>
-
+        <p class="location"><i class="fas fa-map-marker-alt fa-fw"></i> San Francisco, CA</p>
         <p class="quote">&ldquo;Curiosity is the spark.&rdquo;</p>
-
         <nav class="nav">
-          <a href="index.html" class="nav-link active">About</a>
+          <a href="index.html" class="nav-link" aria-current="page">About</a>
           <a href="experience.html" class="nav-link">Experience</a>
           <a href="research.html" class="nav-link">Research</a>
+          <a href="overclocking.html" class="nav-link">Overclocking</a>
           <a href="posts.html" class="nav-link">Posts</a>
         </nav>
-
         <div class="contact-block">
           <a class="contact-item" href="contact.html" title="Contact"><i class="fas fa-envelope"></i></a>
-          <a class="contact-item" href="https://github.com/yourname" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a class="contact-item" href="https://github.com/Evasion-OC" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a class="contact-item" href="https://hwbot.org/users/evasion/" title="HWBOT" target="_blank" rel="noopener"><i class="fas fa-bolt"></i></a>
           <a class="contact-item" href="https://scholar.google.com/" title="Google Scholar" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i></a>
           <a class="contact-item" href="https://www.linkedin.com/in/yourname" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
           <a class="contact-item" href="https://twitter.com/yourname" title="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
-          <a class="contact-item" href="assets/cv.pdf" title="CV" target="_blank" rel="noopener"><i class="ai ai-cv"></i></a>
+          <a class="contact-item" href="cv.html" title="CV"><i class="ai ai-cv"></i></a>
         </div>
-
         <div class="palette-picker" role="group" aria-label="Color palette">
           <button class="palette-swatch" data-palette="burgundy" aria-label="Burgundy"></button>
           <button class="palette-swatch" data-palette="oxford" aria-label="Oxford blue"></button>
           <button class="palette-swatch" data-palette="forest" aria-label="Forest green"></button>
           <button class="palette-swatch" data-palette="charcoal" aria-label="Charcoal"></button>
         </div>
-
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-          <i class="fas fa-moon"></i>
-        </button>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       </div>
     </aside>
 
-    <!-- MAIN -->
-    <main class="main">
+    <main class="main" id="main-content">
+      <section class="hero">
+        <p class="eyebrow">Hi, I'm</p>
+        <h1 class="hero-name">Kasra Ghanavati</h1>
+        <p class="hero-role">Researcher · Engineer · Extreme Overclocker</p>
+        <p class="hero-tagline">
+          Working at the intersection of <em>computer architecture</em>,
+          <em>performance</em>, and <em>research</em> &mdash; and pushing silicon
+          to its thermal and electrical limits in my spare time.
+        </p>
+        <div class="hero-cta">
+          <a href="research.html" class="btn-primary">View research <i class="fas fa-arrow-right"></i></a>
+          <a href="overclocking.html" class="btn-ghost"><i class="fas fa-bolt"></i> See overclocking</a>
+          <a href="contact.html" class="btn-ghost"><i class="fas fa-envelope"></i> Get in touch</a>
+        </div>
+      </section>
+
       <section class="prose">
         <p>
-          I'm a researcher / engineer based in San Francisco. I work on
-          <em>machine learning</em>, with a focus on
-          <strong>data attribution</strong>, <strong>generalization</strong>, and
-          <strong>safety</strong>. Replace this paragraph with a short bio.
+          I'm based at the <strong>University of Greenwich</strong>, working on
+          [research area &mdash; replace with your topic]. My interests span
+          theory and practical engineering, with a preference for problems where
+          a careful experiment is worth a thousand opinions.
+        </p>
+        <p>
+          Previously, I spent time at <a href="#">Org A</a> and <a href="#">Org B</a>.
+          Outside of research, I compete on
+          <a href="https://hwbot.org/users/evasion/" target="_blank" rel="noopener">HWBOT</a>
+          as <code>Evasion</code> on team <strong>Wegg</strong>, focused on
+          memory and extreme overclocking.
         </p>
 
-        <p>
-          Previously, I spent time at <a href="#">Lab A</a> and <a href="#">Lab B</a>.
-          I obtained my degrees from <a href="#">University X</a> and
-          <a href="#">University Y</a>.
-        </p>
-
-        <h2>🔬 Research</h2>
-        <p>
-          Describe your research interests here. You can use <em>italic</em>,
-          <strong>bold</strong>, and lists:
-        </p>
+        <h2>🔬 Research interests</h2>
         <ul>
-          <li><strong>Data Attribution</strong>: How training data influences models.</li>
-          <li><strong>Data Curation</strong>: Generating/augmenting data to help generalization.</li>
-          <li><strong>Privacy</strong>: Doing the above without compromising privacy.</li>
+          <li><strong>Topic 1</strong> &mdash; one-sentence description of the question and approach.</li>
+          <li><strong>Topic 2</strong> &mdash; second area of focus.</li>
+          <li><strong>Topic 3</strong> &mdash; third area.</li>
         </ul>
 
         <h2>🗞️ News</h2>
         <ul class="news-list">
-          <li><span class="news-date">May 2026</span> Launched my new personal website.</li>
-          <li><span class="news-date">Jan 2026</span> Started as a research fellow at <a href="#">Org</a>.</li>
-          <li><span class="news-date">Sep 2025</span> Two papers accepted at <a href="#">NeurIPS 2025</a>.</li>
+          <li><span class="news-date">May 2026</span>Launched this personal site at <code>evasion-oc.github.io</code>.</li>
+          <li><span class="news-date">Apr 2026</span>[Recent achievement / talk / paper acceptance].</li>
+          <li><span class="news-date">Mar 2026</span>[Recent achievement].</li>
+          <li><span class="news-date">Jan 2026</span>Started [position] at <a href="#">Org</a>.</li>
         </ul>
 
-        <h2>📄 Selected Research</h2>
-        <p>See the <a href="research.html">research page</a> for the full list.</p>
+        <h2>📄 Selected research</h2>
+        <section class="card-grid">
+          <article class="pub-card pub-card-featured fade-in">
+            <span class="featured-badge">Featured</span>
+            <div class="card-image-col">
+              <div class="card-image placeholder-img" aria-hidden="true">
+                <i class="fas fa-image"></i>
+              </div>
+            </div>
+            <div class="content-col">
+              <h3 class="card-title">A Unified Theory of Random Projection for Influence Functions</h3>
+              <p class="authors-row">
+                <span class="author author-me">Kasra Ghanavati</span>,
+                <span class="author">Collaborator A</span>,
+                <span class="author">Advisor X</span>
+              </p>
+              <p class="info-line">
+                <span class="pub-date">Feb 2026</span>
+                <span class="divider">&middot;</span>
+                <span class="pub-venue">ICLR 2026 Workshop DATA-FM</span>
+              </p>
+              <div class="card-tags">
+                <span class="filter-tag tag-blue">Data</span>
+                <span class="filter-tag tag-purple">Attribution</span>
+                <span class="filter-tag tag-magenta">Theory</span>
+              </div>
+              <p class="excerpt">
+                A unified theoretical framework for random projection in influence-function
+                methods, with implications for scalable data attribution.
+              </p>
+              <div class="card-links">
+                <a class="btn-ghost" href="#"><i class="ai ai-arxiv"></i> arXiv</a>
+                <a class="btn-ghost" href="#"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <p style="margin-top: 1rem;">
+          <a href="research.html" class="more-link">See the full publication list →</a>
+        </p>
+
+        <h2>🔧 Hardware &amp; Overclocking</h2>
+        <p>
+          On the hardware side, I'm a competitive extreme overclocker on
+          <a href="https://hwbot.org/users/evasion/" target="_blank" rel="noopener">HWBOT</a>.
+          Focus areas: <em>extreme cooling</em> (LN2, dry ice, phase change),
+          <em>memory subsystem tuning</em>, and <em>benchmark world-record chasing</em>
+          on hardware where there's still gain to be had.
+        </p>
+        <div class="stats-grid fade-in">
+          <div class="stat-card">
+            <div class="stat-value">#1,593</div>
+            <div class="stat-label">Worldwide</div>
+            <div class="stat-context">of 224,445</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">#68</div>
+            <div class="stat-label">UK 🇬🇧</div>
+            <div class="stat-context">country rank</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">16 🥇</div>
+            <div class="stat-label">Hardware cups</div>
+            <div class="stat-context">+ 5 🥉</div>
+          </div>
+        </div>
+        <p>
+          <a href="overclocking.html" class="more-link">More on hardware &amp; rigs →</a>
+        </p>
 
         <h2>🔖 Misc</h2>
-        <p>In my spare time, I enjoy photography 📷 and music 🎶.</p>
+        <p>
+          In my spare time: photography 📷, music 🎶, and reading 📚 about
+          economics and history. See what I'm focused on
+          <a href="now.html">right now</a>, or some of my
+          <a href="photos.html">photos</a>.
+        </p>
       </section>
 
       <footer class="footer">Last updated on <span id="last-updated">May 2026</span></footer>
     </main>
   </div>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>

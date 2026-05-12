@@ -3,19 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Kasra Ghanavati</title>
-  <meta name="description" content="Get in touch with Kasra Ghanavati." />
+  <title>CV | Kasra Ghanavati</title>
+  <meta name="description" content="Curriculum Vitae of Kasra Ghanavati." />
   <meta name="author" content="Kasra Ghanavati" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Contact | Kasra Ghanavati" />
-  <meta property="og:description" content="Get in touch." />
-  <meta property="og:url" content="https://evasion-oc.github.io/contact.html" />
+  <meta property="og:title" content="CV | Kasra Ghanavati" />
+  <meta property="og:description" content="Curriculum Vitae of Kasra Ghanavati." />
+  <meta property="og:url" content="https://evasion-oc.github.io/cv.html" />
   <meta property="og:image" content="https://evasion-oc.github.io/assets/img/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact | Kasra Ghanavati" />
-  <meta name="twitter:description" content="Get in touch." />
-  <meta name="twitter:image" content="https://evasion-oc.github.io/assets/img/og-image.svg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
@@ -44,13 +41,13 @@
           <a href="posts.html" class="nav-link">Posts</a>
         </nav>
         <div class="contact-block">
-          <a class="contact-item" href="contact.html" title="Contact" aria-current="page"><i class="fas fa-envelope"></i></a>
+          <a class="contact-item" href="contact.html" title="Contact"><i class="fas fa-envelope"></i></a>
           <a class="contact-item" href="https://github.com/Evasion-OC" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
           <a class="contact-item" href="https://hwbot.org/users/evasion/" title="HWBOT" target="_blank" rel="noopener"><i class="fas fa-bolt"></i></a>
           <a class="contact-item" href="https://scholar.google.com/" title="Google Scholar" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i></a>
           <a class="contact-item" href="https://www.linkedin.com/in/yourname" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
           <a class="contact-item" href="https://twitter.com/yourname" title="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
-          <a class="contact-item" href="cv.html" title="CV"><i class="ai ai-cv"></i></a>
+          <a class="contact-item" href="cv.html" title="CV" aria-current="page"><i class="ai ai-cv"></i></a>
         </div>
         <div class="palette-picker" role="group" aria-label="Color palette">
           <button class="palette-swatch" data-palette="burgundy" aria-label="Burgundy"></button>
@@ -64,55 +61,34 @@
 
     <main class="main" id="main-content">
       <section class="hero">
-        <p class="eyebrow">Say hi</p>
-        <h1 class="hero-name">Get in touch</h1>
+        <p class="eyebrow">CV</p>
+        <h1 class="hero-name">Curriculum Vitae</h1>
         <p class="hero-tagline">
-          Drop me a note &mdash; I usually reply within a few days.
-          For research collaborations, please include a one-line summary of
-          the problem and links to anything relevant.
+          Education, experience, publications, and service &mdash; in PDF form.
         </p>
+        <div class="hero-cta">
+          <a href="assets/cv.pdf" class="btn-primary" download>
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+          <a href="assets/cv.pdf" class="btn-ghost" target="_blank" rel="noopener">
+            <i class="fas fa-external-link-alt"></i> Open in new tab
+          </a>
+        </div>
       </section>
 
-      <section class="prose contact-page">
-        <form id="contact-form" class="contact-form"
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required autocomplete="name" />
+      <section class="prose">
+        <object data="assets/cv.pdf" type="application/pdf" class="cv-frame">
+          <div class="cv-fallback">
+            <p>
+              <i class="fas fa-file-pdf"></i>
+              Your browser can't display the inline PDF, or no <code>cv.pdf</code> is uploaded yet.
+            </p>
+            <p>
+              Drop your CV at <code>assets/cv.pdf</code> and it will render here automatically.
+              In the meantime, you can <a href="assets/cv.pdf">try downloading it directly</a>.
+            </p>
           </div>
-
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" />
-          </div>
-
-          <div class="form-row">
-            <label for="subject">Subject</label>
-            <input id="subject" name="subject" type="text" required />
-          </div>
-
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-          </div>
-
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
-                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
-
-          <div class="form-actions">
-            <button type="submit" class="btn-primary">
-              <i class="fas fa-paper-plane"></i> Send
-            </button>
-            <span id="form-status" class="form-status" role="status" aria-live="polite"></span>
-          </div>
-        </form>
-
-        <p class="form-help">
-          <i class="fas fa-shield-halved"></i>
-          Submissions are routed through <a href="https://formspree.io/" target="_blank" rel="noopener">Formspree</a>.
-          My email is never exposed in the source of this site.
-        </p>
+        </object>
       </section>
 
       <footer class="footer">Last updated on <span id="last-updated">May 2026</span></footer>
