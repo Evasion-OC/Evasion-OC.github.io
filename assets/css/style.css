@@ -54,40 +54,42 @@
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== Dark mode (pbb.sh-inspired) ===== */
+/* ===== Dark mode (cream-on-deep-blue editorial) =====
+   Inverts the day relationship: day = blue ink on cream paper,
+   night = cream text on deep-blue paper, with a warm gold accent. */
 :root[data-theme="dark"] {
-  --color-primary: #8b7aff;
-  --color-primary-hover: #a99bff;
-  --color-primary-soft: #2a2348;
-  --color-accent: #b898e0;
+  --color-primary: #d4af6a;
+  --color-primary-hover: #e0c082;
+  --color-primary-soft: #2a2418;
+  --color-accent: #d4af6a;
 
-  --color-text: #e9e8f0;
-  --color-heading: #cdc8d8;
-  --color-muted: #a8a4b8;
+  --color-text: #f0e9dd;
+  --color-heading: #f8f3eb;
+  --color-muted: #a8a092;
   --color-link: var(--color-primary);
 
-  --color-bg: #110f1a;
-  --color-bg-soft: #1a1824;
-  --color-sidebar-bg: #161422;
-  --color-border: #2d2933;
-  --color-border-soft: #3f3c48;
+  --color-bg: #0a1828;
+  --color-bg-soft: #11253a;
+  --color-sidebar-bg: #0e1f33;
+  --color-border: #1f3349;
+  --color-border-soft: #182a3c;
 
-  /* Dark tag palette: lighter desaturated foregrounds, low-alpha backgrounds */
-  --tag-magenta: #f0a0cc;     --tag-magenta-bg: rgba(235, 47, 150, 0.15);
-  --tag-red: #f0a0a0;         --tag-red-bg: rgba(245, 34, 45, 0.15);
-  --tag-volcano: #f0a888;     --tag-volcano-bg: rgba(250, 84, 28, 0.15);
-  --tag-orange: #f0b878;      --tag-orange-bg: rgba(250, 140, 22, 0.15);
-  --tag-gold: #f0c868;        --tag-gold-bg: rgba(250, 173, 20, 0.15);
-  --tag-lime: #c0e070;        --tag-lime-bg: rgba(160, 217, 17, 0.15);
-  --tag-green: #88d088;       --tag-green-bg: rgba(82, 196, 26, 0.15);
-  --tag-cyan: #70d0d0;        --tag-cyan-bg: rgba(19, 194, 194, 0.15);
-  --tag-blue: #80c0f0;        --tag-blue-bg: rgba(24, 144, 255, 0.15);
-  --tag-geekblue: #a0a8f0;    --tag-geekblue-bg: rgba(47, 84, 235, 0.15);
-  --tag-purple: #b898e0;      --tag-purple-bg: rgba(114, 46, 209, 0.15);
+  /* Warm-tinted dark tags */
+  --tag-magenta: #e89bc0;     --tag-magenta-bg: rgba(235, 47, 150, 0.12);
+  --tag-red: #e09898;         --tag-red-bg: rgba(245, 34, 45, 0.12);
+  --tag-volcano: #e0a888;     --tag-volcano-bg: rgba(250, 84, 28, 0.12);
+  --tag-orange: #e0b078;      --tag-orange-bg: rgba(250, 140, 22, 0.12);
+  --tag-gold: #d4af6a;        --tag-gold-bg: rgba(250, 173, 20, 0.12);
+  --tag-lime: #c0d488;        --tag-lime-bg: rgba(160, 217, 17, 0.12);
+  --tag-green: #88c898;       --tag-green-bg: rgba(82, 196, 26, 0.12);
+  --tag-cyan: #88c8c8;        --tag-cyan-bg: rgba(19, 194, 194, 0.12);
+  --tag-blue: #9cbce0;        --tag-blue-bg: rgba(24, 144, 255, 0.12);
+  --tag-geekblue: #a8b0e0;    --tag-geekblue-bg: rgba(47, 84, 235, 0.12);
+  --tag-purple: #c0a8d8;      --tag-purple-bg: rgba(114, 46, 209, 0.12);
 
-  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4),
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.45),
                  0 1px 1px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.55),
+  --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.6),
                        0 4px 8px rgba(0, 0, 0, 0.4);
 }
 

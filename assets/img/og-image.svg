@@ -7,8 +7,8 @@
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <text x="80" y="280" font-family="Georgia, 'Times New Roman', serif" font-size="96" font-weight="700" fill="#fbf9f5" letter-spacing="-2">Kasra Ghanavati</text>
-  <text x="80" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-style="italic" fill="#b8895c">Research · Engineering · Overclocking</text>
+  <text x="80" y="340" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-style="italic" fill="#b8895c">Research · Engineering</text>
   <line x1="80" y1="380" x2="220" y2="380" stroke="#b8895c" stroke-width="3"/>
-  <text x="80" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" fill="#fbf9f5" opacity="0.85">Personal academic site &amp; HWBOT profile</text>
+  <text x="80" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" fill="#fbf9f5" opacity="0.85">Personal academic site</text>
   <text x="80" y="560" font-family="ui-monospace, 'SF Mono', monospace" font-size="22" fill="#fbf9f5" opacity="0.55">evasion-oc.github.io</text>
 </svg>
