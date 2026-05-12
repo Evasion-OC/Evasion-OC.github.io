@@ -1,0 +1,8 @@
+# Pages kept local-only (drafts / private content under revision)
+overclocking.html
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
