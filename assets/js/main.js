@@ -1,4 +1,35 @@
 // ============================================================
+// Palette picker (persisted to localStorage)
+// ============================================================
+(function initPalette() {
+  const stored = localStorage.getItem("palette") || "burgundy";
+  document.documentElement.setAttribute("data-palette", stored);
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const swatches = document.querySelectorAll(".palette-swatch");
+    if (!swatches.length) return;
+
+    const updateActive = () => {
+      const current = document.documentElement.getAttribute("data-palette");
+      swatches.forEach((s) =>
+        s.classList.toggle("is-active", s.dataset.palette === current)
+      );
+    };
+    updateActive();
+
+    swatches.forEach((swatch) => {
+      swatch.addEventListener("click", () => {
+        const p = swatch.dataset.palette;
+        if (!p) return;
+        document.documentElement.setAttribute("data-palette", p);
+        localStorage.setItem("palette", p);
+        updateActive();
+      });
+    });
+  });
+})();
+
+// ============================================================
 // Theme toggle (persisted to localStorage)
 // ============================================================
 (function initTheme() {
