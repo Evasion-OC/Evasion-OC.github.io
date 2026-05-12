@@ -1,9 +1,7 @@
 /* ============================================================
-   Theme tokens — four palettes × light/dark
-   Default palette is "burgundy". Override with data-palette on <html>.
+   Theme tokens — Oxford blue (day) + pbb.sh-inspired dark
    ============================================================ */
-:root,
-:root[data-palette="burgundy"] {
+:root {
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
     Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-serif: "Crimson Pro", "Source Serif Pro", "Georgia", "Times New Roman",
@@ -13,24 +11,24 @@
   --font-persian: "Vazirmatn", "Geeza Pro", "Iranian Sans", Tahoma,
     var(--font-sans);
 
-  /* Burgundy — deeper, less pink */
-  --color-primary: #5c1a2b;
-  --color-primary-hover: #7d2438;
-  --color-primary-soft: #efe4e6;
-  --color-accent: #a88643;
+  /* Oxford blue + warm cream */
+  --color-primary: #0f2a47;
+  --color-primary-hover: #1e4470;
+  --color-primary-soft: #e2e8f0;
+  --color-accent: #b8895c;
 
-  --color-text: #352528;
-  --color-heading: #1a0e10;
-  --color-muted: #857072;
+  --color-text: #1f2937;
+  --color-heading: #0f172a;
+  --color-muted: #6b7588;
   --color-link: var(--color-primary);
 
   --color-bg: #fbf9f5;
-  --color-bg-soft: #f2ebe0;
-  --color-sidebar-bg: #ebe0d0;
-  --color-border: #ddd0c0;
-  --color-border-soft: #e8ddcc;
+  --color-bg-soft: #f0ebe0;
+  --color-sidebar-bg: #e9e2d2;
+  --color-border: #dcd3c2;
+  --color-border-soft: #e8e0d0;
 
-  /* Tag palette (shared across color palettes — semantic) */
+  /* Tag palette (semantic) */
   --tag-magenta: #9b2f60;     --tag-magenta-bg: #fcf1f5;
   --tag-red: #b83232;         --tag-red-bg: #fcf3f1;
   --tag-volcano: #c5532a;     --tag-volcano-bg: #fdf2eb;
@@ -56,71 +54,8 @@
   --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Oxford Blue + warm cream */
-:root[data-palette="oxford"] {
-  --color-primary: #0f2a47;
-  --color-primary-hover: #1e4470;
-  --color-primary-soft: #e2e8f0;
-  --color-accent: #b8895c;
-
-  --color-text: #1f2937;
-  --color-heading: #0f172a;
-  --color-muted: #6b7588;
-  --color-link: var(--color-primary);
-
-  --color-bg: #fbf9f5;
-  --color-bg-soft: #f0ebe0;
-  --color-sidebar-bg: #e9e2d2;
-  --color-border: #dcd3c2;
-  --color-border-soft: #e8e0d0;
-}
-
-/* Forest Green + ivory */
-:root[data-palette="forest"] {
-  --color-primary: #2a4a3a;
-  --color-primary-hover: #3d6655;
-  --color-primary-soft: #e3eee8;
-  --color-accent: #a88643;
-
-  --color-text: #2d3a33;
-  --color-heading: #13231b;
-  --color-muted: #6f7c75;
-  --color-link: var(--color-primary);
-
-  --color-bg: #fafaf5;
-  --color-bg-soft: #edece0;
-  --color-sidebar-bg: #e5e5d5;
-  --color-border: #d6d5c5;
-  --color-border-soft: #e1e0d2;
-}
-
-/* Charcoal + amber (monochrome with single accent) */
-:root[data-palette="charcoal"] {
-  --color-primary: #2a2520;
-  --color-primary-hover: #48402f;
-  --color-primary-soft: #e8e5dd;
-  --color-accent: #8b6f37;
-
-  --color-text: #2a2520;
-  --color-heading: #16110d;
-  --color-muted: #7c7064;
-  --color-link: var(--color-accent);
-
-  --color-bg: #f8f6f1;
-  --color-bg-soft: #edeae0;
-  --color-sidebar-bg: #e5e1d5;
-  --color-border: #d5d0c2;
-  --color-border-soft: #ddd6c8;
-}
-
-/* ===== Dark mode (unified, pbb.sh-inspired) =====
-   Cool dark with purple-blue primary, regardless of which day palette is set.
-   The palette picker only affects light mode. */
-:root[data-theme="dark"],
-:root[data-theme="dark"][data-palette="burgundy"],
-:root[data-theme="dark"][data-palette="oxford"],
-:root[data-theme="dark"][data-palette="forest"],
-:root[data-theme="dark"][data-palette="charcoal"] {
+/* ===== Dark mode (pbb.sh-inspired) ===== */
+:root[data-theme="dark"] {
   --color-primary: #8b7aff;
   --color-primary-hover: #a99bff;
   --color-primary-soft: #2a2348;
@@ -384,40 +319,8 @@ hr {
   box-shadow: 0 4px 12px color-mix(in srgb, var(--color-primary) 30%, transparent);
 }
 
-/* ===== Palette picker ===== */
-.palette-picker {
-  display: inline-flex;
-  gap: 0.4rem;
-  margin-top: 1rem;
-  padding: 0.35rem 0.55rem;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-}
-.palette-swatch {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 0;
-  cursor: pointer;
-  padding: 0;
-  position: relative;
-  transition: transform var(--transition);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-.palette-swatch:hover { transform: scale(1.15); }
-.palette-swatch:focus-visible { outline-color: var(--color-primary); }
-.palette-swatch.is-active {
-  outline-color: var(--color-primary);
-}
-.palette-swatch[data-palette="burgundy"] { background: #5c1a2b; }
-.palette-swatch[data-palette="oxford"]   { background: #0f2a47; }
-.palette-swatch[data-palette="forest"]   { background: #2a4a3a; }
-.palette-swatch[data-palette="charcoal"] { background: #2a2520; }
-
 .theme-toggle {
-  margin-top: 0.6rem;
+  margin-top: 1rem;
   width: 38px;
   height: 38px;
   border-radius: 50%;
