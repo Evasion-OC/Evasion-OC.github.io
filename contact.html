@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Kasra Ghanavati</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout-grid">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="avatar"><img src="assets/img/avatar.png" alt="Kasra Ghanavati" onerror="this.style.display='none'" /></div>
+        <h1 class="name">Kasra&nbsp;Ghanavati</h1>
+        <p class="name-alt">کسری قنواتی</p>
+        <p class="location"><i class="fas fa-map-marker-alt fa-fw"></i> San Francisco, CA</p>
+        <p class="quote">&ldquo;Curiosity is the spark.&rdquo;</p>
+        <nav class="nav">
+          <a href="index.html" class="nav-link">About</a>
+          <a href="experience.html" class="nav-link">Experience</a>
+          <a href="research.html" class="nav-link">Research</a>
+          <a href="posts.html" class="nav-link">Posts</a>
+        </nav>
+        <div class="contact-block">
+          <a class="contact-item" href="contact.html" title="Contact"><i class="fas fa-envelope"></i></a>
+          <a class="contact-item" href="https://github.com/Evasion-OC" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a class="contact-item" href="https://scholar.google.com/" title="Google Scholar" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i></a>
+          <a class="contact-item" href="https://www.linkedin.com/in/yourname" title="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+          <a class="contact-item" href="https://twitter.com/yourname" title="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="prose contact-page">
+        <h2>Get in touch</h2>
+        <p>Drop me a note &mdash; I usually reply within a few days.</p>
+
+        <form id="contact-form" class="contact-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required autocomplete="name" />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" required />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <!-- Honeypot: bots fill this, humans don't. Formspree silently drops these. -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-paper-plane"></i> Send
+            </button>
+            <span id="form-status" class="form-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <p class="form-help">
+          <i class="fas fa-shield-halved"></i>
+          Submissions are routed through <a href="https://formspree.io/" target="_blank" rel="noopener">Formspree</a>.
+          Your email is never exposed in the source of this site.
+        </p>
+      </section>
+
+      <footer class="footer">Last updated on <span id="last-updated">May 2026</span></footer>
+    </main>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
